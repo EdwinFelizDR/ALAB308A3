@@ -8,12 +8,18 @@ function getUserData(id) {
     db2: db2,
     db3: db3
   };
+
+   //To stored the value Returned From Central, the database (db1, db2, db3)
    let valueReturnedFromCentral = "";
+
+   //Storing the result returned from fuction central in database.js 
    let db = central(id);
+
+   //then then then 
    db.then(result => {
    valueReturnedFromCentral = result;
-   console.log(valueReturnedFromCentral);
-
+   
+   //Showing the returned object 
    dbs[valueReturnedFromCentral](id).then(result=>{
       console.log(result);
    })
